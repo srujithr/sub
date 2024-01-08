@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+    <!-- Search End -->
+<div class="split-screen">
+</div>
+      <div class="right">
+        <form  method="POST" action="{% url 'user_login' %}">
+            {% csrf_token %}
+            <section class="copy">
+                <h2>Login</h2>
+            </section>
+            <div class="input-container password">
+                <label for="username">username</label>
+                <input for="username" name="username" placeholder="" type="text">
+                <i class="far fa-eye-slash"></i>
+            </div>
+
+            <div class="input-container password">
+                <label for="password">password</label>
+                <input for="password" name="password" placeholder="Must be at 6 characters" type="text">
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <div class="input-container cta">
+                <label for="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark">
+                        sign up for email updates</span>
+                </label>
+            </div>
+            <button class="signup-btn" type="submit">Sign Up </button>
+            {{ sucess }}
+        </form>
+      </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

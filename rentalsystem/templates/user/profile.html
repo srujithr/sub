@@ -1,0 +1,20 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+
+    <p><strong>Username:</strong> {{ data.username }}</p>
+    <p><strong>Email:</strong> {{ data.email }}</p>
+    <p><strong>Company Name:</strong> {{ data.company_name }}</p>
+    <!-- Add more fields as needed -->
+
+    <!-- You can also add a link to edit the profile -->
+    <!-- Some template where you create a link to the profile view -->
+<a href="{% url 'profile'%}">View Profile</a>
+
+</body>
+</html>

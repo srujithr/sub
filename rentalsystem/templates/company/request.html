@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Request Form</title>
+</head>
+<body>
+    <h2>Car Request Form</h2>
+
+    <form method="post" action="{% url 'car_request' %}">
+        {% csrf_token %}
+        <label for="no_of_day">Number of Days:</label>
+        <input type="number" name="no_of_day" required>
+
+        <label for="day">Day:</label>
+        <input type="text" name="day" required>
+
+        <label for="booking_date">Booking Date:</label>
+        <input type="text" name="booking_date" required>
+
+        <button type="submit">Submit Request</button>
+    </form>
+</body>
+</html>

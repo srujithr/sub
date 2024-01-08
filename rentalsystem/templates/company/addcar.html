@@ -1,0 +1,51 @@
+{% extends 'company/companyindex.html' %}
+{% block content %}
+{% load static %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" style="width: 60%; margin-top: 40px; padding-left: 30%">
+          <form method="post" action="add_car" enctype="multipart/form-data">
+               {% csrf_token %}
+              <!-- Email input -->
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" >Car name</label>
+                  <input type="text" name="name" class="form-control" value="">
+                </div>
+              <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" >carmodel</label>
+                  <input type="text" name="car_model" class="form-control" value="">
+                </div>
+              <!-- Email input -->
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" >price</label>
+                  <input type="text"  name="price" class="form-control" value="">
+
+                </div>
+
+                <div data-mdb-input-init class="form-outline ">
+                  <label for="formFileMultiple" class="form-label">photo</label>
+                    <input class="form-control" type="file" name="image" id="formFileMultiple" value="">
+                </div><br><br>
+
+                <div data-mdb-input-init class="form-outline">
+                  <label class="form-label" for="company_id">Select Company</label>
+                  <select name="company_id" class="form-control" id="company_id">
+                      {% for company in companies %}
+                          <option value="{{ company.id }}">{{ company.name }}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+                 <!-- Message input -->
+                <div data-mdb-input-init class="form-outline ">
+                    <label class="form-label" for="form4Example3">details</label>
+                <textarea class="form-control" name="details" id="form4Example3" rows="6" value=""></textarea>
+                </div><br><br>
+                <!-- Submit button -->
+              <input type="submit" value="Submit">
+
+            </form>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+
